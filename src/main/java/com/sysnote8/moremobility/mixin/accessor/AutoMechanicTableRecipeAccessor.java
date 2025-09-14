@@ -9,6 +9,6 @@ import java.util.Set;
 
 @Mixin(AutoMechanicTableRecipe.class)
 public interface AutoMechanicTableRecipeAccessor {
-    @Accessor("ingredients")
+    @Accessor(value = "ingredients", remap = false)
     Set<Ingredient> ingredients();
 }
