@@ -6,16 +6,17 @@ import io.github.foundationgames.automobility.automobile.attachment.FrontAttachm
 import io.github.foundationgames.automobility.automobile.attachment.front.FrontAttachment;
 
 public class MMAttachments {
-    private static <T extends FrontAttachment> FrontAttachmentType<T> register(FrontAttachmentType<T> entry) {
-        FrontAttachmentType.REGISTRY.register(entry);
-        return entry; // for type hint correctly
-    }
-
     public static final FrontAttachmentType<AdvancedCropHarvesterAttachment> ADVANCED_CROP_HARVESTER = register(new FrontAttachmentType<>(
             MoreMobility.id("advanced_crop_harvester"),
             AdvancedCropHarvesterAttachment::new,
             new FrontAttachmentType.FrontAttachmentModel(Automobility.rl("textures/entity/automobile/front_attachment/crop_harvester.png"), MoreMobility.id("frontatt_harvester_advanced"), 0.83f)
     ));
 
-    public static void init() {}
+    private static <T extends FrontAttachment> FrontAttachmentType<T> register(FrontAttachmentType<T> entry) {
+        FrontAttachmentType.REGISTRY.register(entry);
+        return entry; // for type hint correctly
+    }
+
+    public static void init() {
+    }
 }

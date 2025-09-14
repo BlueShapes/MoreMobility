@@ -6,10 +6,6 @@ import io.github.foundationgames.automobility.automobile.AutomobileFrame;
 import io.github.foundationgames.automobility.automobile.WheelBase;
 
 public class MMFrames {
-    private static AutomobileFrame register(AutomobileFrame entry) {
-        return AutomobileFrame.REGISTRY.register(entry);
-    }
-
     public static final AutomobileFrame SILVER = register(
             new AutomobileFrame(
                     MoreMobility.id("silver"),
@@ -17,7 +13,6 @@ public class MMFrames {
                     rickshawFrame("quartz")
             )
     );
-
     public static final AutomobileFrame RACE_SHOPPING_CART = register(
             new AutomobileFrame(
                     MoreMobility.id("race_shopping_cart"),
@@ -36,12 +31,17 @@ public class MMFrames {
             )
     );
 
-    public static void init() {}
+    private static AutomobileFrame register(AutomobileFrame entry) {
+        return AutomobileFrame.REGISTRY.register(entry);
+    }
+
+    public static void init() {
+    }
 
     private static AutomobileFrame.FrameModel rickshawFrame(String prefix) {
         return
                 new AutomobileFrame.FrameModel(
-                        Automobility.rl("textures/entity/automobile/frame/"+prefix+"_rickshaw.png"),
+                        Automobility.rl("textures/entity/automobile/frame/" + prefix + "_rickshaw.png"),
                         Automobility.rl("frame_rickshaw"),
                         new WheelBase(
                                 new WheelBase.WheelPos(-11, -7.5f, 1, 0, WheelBase.WheelEnd.BACK, WheelBase.WheelSide.LEFT),

@@ -19,10 +19,6 @@ public class MoreMobility {
     public static final String MODID = "moremobility";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public static ResourceLocation id(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
-    }
-
     @SuppressWarnings("removal")
     public MoreMobility() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -32,6 +28,10 @@ public class MoreMobility {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MMConfig.SPEC);
+    }
+
+    public static ResourceLocation id(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 
     private void registerAll(IEventBus modEventBus) {

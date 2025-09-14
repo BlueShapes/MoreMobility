@@ -8,11 +8,8 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 @Mod.EventBusSubscriber(modid = MoreMobility.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MMConfig {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-
-    private static final ForgeConfigSpec.BooleanValue OFFROAD_SLOWNESS = BUILDER.comment("Apply slow effect when driving on non-paved road").define("offroadSlowness", true);
-
     static final ForgeConfigSpec SPEC = BUILDER.build();
-
+    private static final ForgeConfigSpec.BooleanValue OFFROAD_SLOWNESS = BUILDER.comment("Apply slow effect when driving on non-paved road").define("offroadSlowness", true);
     public static boolean offroadSlowness;
 
     @SubscribeEvent

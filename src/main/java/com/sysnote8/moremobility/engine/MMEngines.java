@@ -6,10 +6,6 @@ import io.github.foundationgames.automobility.automobile.AutomobileEngine;
 import io.github.foundationgames.automobility.sound.AutomobilitySounds;
 
 public class MMEngines {
-    private static AutomobileEngine register(AutomobileEngine engineData) {
-        return AutomobileEngine.REGISTRY.register(engineData);
-    }
-
     public static final AutomobileEngine NETHERITE = register(
             new AutomobileEngine(
                     MoreMobility.id("netherite"),
@@ -23,5 +19,10 @@ public class MMEngines {
             )
     );
 
-    public static void init() {}
+    private static AutomobileEngine register(AutomobileEngine engineData) {
+        return AutomobileEngine.REGISTRY.register(engineData);
+    }
+
+    public static void init() {
+    }
 }
