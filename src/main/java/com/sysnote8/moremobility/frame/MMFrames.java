@@ -1,5 +1,6 @@
-package com.sysnote8.moremobility;
+package com.sysnote8.moremobility.frame;
 
+import com.sysnote8.moremobility.MoreMobility;
 import io.github.foundationgames.automobility.Automobility;
 import io.github.foundationgames.automobility.automobile.AutomobileFrame;
 import io.github.foundationgames.automobility.automobile.WheelBase;

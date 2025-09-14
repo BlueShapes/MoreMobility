@@ -1,5 +1,6 @@
-package com.sysnote8.moremobility;
+package com.sysnote8.moremobility.tag;
 
+import com.sysnote8.moremobility.MoreMobility;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;

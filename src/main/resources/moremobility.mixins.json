@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "moremobility.refmap.json",
   "mixins": [
-    "MixinAutomobileEntity"
+    "MixinAutomobileEntity",
+    "accessor.AutoMechanicTableRecipeAccessor"
   ],
   "client": [
   ],

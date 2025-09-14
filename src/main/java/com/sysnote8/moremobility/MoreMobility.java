@@ -2,6 +2,8 @@ package com.sysnote8.moremobility;
 
 import com.mojang.logging.LogUtils;
 import com.sysnote8.moremobility.attachment.MMAttachments;
+import com.sysnote8.moremobility.engine.MMEngines;
+import com.sysnote8.moremobility.frame.MMFrames;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -34,7 +36,7 @@ public class MoreMobility {
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MMConfig.SPEC);
     }
 
     private void registerAll(IEventBus modEventBus) {
