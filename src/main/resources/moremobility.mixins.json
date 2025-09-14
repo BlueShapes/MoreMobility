@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.sysnote8.moremobility.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "moremobility.refmap.json",
+  "mixins": [
+    "MixinAutomobileEntity"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
