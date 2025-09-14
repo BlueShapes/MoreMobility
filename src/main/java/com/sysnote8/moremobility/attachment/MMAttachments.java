@@ -9,7 +9,7 @@ public class MMAttachments {
     public static final FrontAttachmentType<AdvancedCropHarvesterAttachment> ADVANCED_CROP_HARVESTER = register(new FrontAttachmentType<>(
             MoreMobility.id("advanced_crop_harvester"),
             AdvancedCropHarvesterAttachment::new,
-            new FrontAttachmentType.FrontAttachmentModel(Automobility.rl("textures/entity/automobile/front_attachment/crop_harvester.png"), MoreMobility.id("frontatt_harvester_advanced"), 0.83f)
+            new FrontAttachmentType.FrontAttachmentModel(Automobility.rl("textures/entity/automobile/front_attachment/crop_harvester.png"), MoreMobility.id("frontatt_harvester_advanced"), 0.5f)
     ));
 
     private static <T extends FrontAttachment> FrontAttachmentType<T> register(FrontAttachmentType<T> entry) {
