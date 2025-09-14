@@ -43,10 +43,6 @@ public class MMEMIPlugin implements EmiPlugin {
 
         for(AutoMechanicTableRecipe recipe: recipeManager.getAllRecipesFor(AutoMechanicTableRecipe.TYPE)) {
             registry.addRecipe(new AutoMechanicTableEmiRecipe(recipe));
-            logger.info("Found recipe! result: {}", recipe.getResultItem().getDisplayName().getString());
-            for(Ingredient i: ((AutoMechanicTableRecipeAccessor)recipe).ingredients()) {
-                logger.info("- {}", Arrays.stream(i.getItems()).map(stack -> stack.getDisplayName().getString()).collect(Collectors.joining(", ")));
-            }
         }
         logger.info("EMI registration completed.");
     }
