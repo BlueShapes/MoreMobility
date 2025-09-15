@@ -1,0 +1,33 @@
+[versions]
+# plugins
+forgeGradle = "[6.0.16,6.2)"
+mixinPlugin = "0.7.+"
+
+# libraries
+# core libraries
+forge = "1.20.1-47.4.0"
+mixin = "0.8.5"
+
+# other mods
+emi = "1.1.22+1.20.1"
+automobility = "0.4.2+1.20.1-forge"
+
+
+[plugins]
+eclipse = { id = "eclipse" }
+idea = { id = "idea" }
+forgeGradle = { id = "net.minecraftforge.gradle", version.ref = "forgeGradle" }
+mixin = { id = "org.spongepowered.mixin", version.ref = "mixinPlugin" }
+
+
+[libraries]
+# core libraries
+forge = { module = "net.minecraftforge:forge", version.ref = "forge" }
+mixin = { module = "org.spongepowered:mixin", version.ref = "mixin" }
+
+# other mods
+emi = { module = "dev.emi:emi-forge", version.ref = "emi" }
+automobility = { module = "maven.modrinth:automobility", version.ref = "automobility" }
+
+
+[bundles]
