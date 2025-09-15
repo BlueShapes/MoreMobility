@@ -14,3 +14,4 @@ Let's add more features to AutoMobility!
 
 ## Credits
 - Inspired from [AutoMobility](https://modrinth.com/mod/automobility)
+- We borrowed workflow files from [FabPose](https://github.com/YukkuriLaboratory/FabPose)(MIT License)
