@@ -38,11 +38,35 @@ public class MMRecipeProvider extends RecipeProvider {
         logger.info("recipe generated!");
     }
 
+    public static AutoMechanicTableRecipeBuilder attachmentRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack) {
+        return engineRecipe(resultStack, 1);
+    }
+
+    public static AutoMechanicTableRecipeBuilder attachmentRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack, int sortNum) {
+        return AutoMechanicTableRecipeBuilder.autoMechanic(MMRecipeCategories.ATTACHMENTS, resultStack, sortNum);
+    }
+
     public static AutoMechanicTableRecipeBuilder engineRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack) {
         return engineRecipe(resultStack, 1);
     }
 
     public static AutoMechanicTableRecipeBuilder engineRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack, int sortNum) {
         return AutoMechanicTableRecipeBuilder.autoMechanic(MMRecipeCategories.ENGINES, resultStack, sortNum);
+    }
+
+    public static AutoMechanicTableRecipeBuilder frameRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack) {
+        return engineRecipe(resultStack, 1);
+    }
+
+    public static AutoMechanicTableRecipeBuilder frameRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack, int sortNum) {
+        return AutoMechanicTableRecipeBuilder.autoMechanic(MMRecipeCategories.FRAMES, resultStack, sortNum);
+    }
+
+    public static AutoMechanicTableRecipeBuilder wheelRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack) {
+        return engineRecipe(resultStack, 1);
+    }
+
+    public static AutoMechanicTableRecipeBuilder wheelRecipe(AutoMechanicTableRecipeBuilder.ResultStack resultStack, int sortNum) {
+        return AutoMechanicTableRecipeBuilder.autoMechanic(MMRecipeCategories.WHEELS, resultStack, sortNum);
     }
 }
