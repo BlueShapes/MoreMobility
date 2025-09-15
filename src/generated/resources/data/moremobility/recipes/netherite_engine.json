@@ -1,6 +1,6 @@
 {
   "type": "automobility:auto_mechanic_table",
-  "category": "moremobility:engines",
+  "category": "automobility:engines",
   "ingredients": [
     {
       "tag": "forge:ingots/netherite"
