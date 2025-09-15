@@ -2,6 +2,7 @@ package com.sysnote8.moremobility;
 
 import com.mojang.logging.LogUtils;
 import com.sysnote8.moremobility.attachment.MMAttachments;
+import com.sysnote8.moremobility.datagen.MMDataGenerator;
 import com.sysnote8.moremobility.engine.MMEngines;
 import com.sysnote8.moremobility.frame.MMFrames;
 import net.minecraft.resources.ResourceLocation;
@@ -26,6 +27,8 @@ public class MoreMobility {
         registerAll(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        modEventBus.register(new MMDataGenerator());
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MMConfig.SPEC);
     }
