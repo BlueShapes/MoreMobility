@@ -156,7 +156,7 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
-    runtimeOnly(fg.deobf(variantOf(libs.emi) { classifier("api") }))
+    compileOnly(fg.deobf(variantOf(libs.emi) { classifier("api") }))
     runtimeOnly(fg.deobf(libs.emi))
     implementation(fg.deobf(libs.automobility))
 
