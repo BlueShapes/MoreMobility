@@ -2,6 +2,7 @@ package com.sysnote8.moremobility.client;
 
 import com.sysnote8.moremobility.MoreMobility;
 import io.github.foundationgames.automobility.automobile.render.AutomobileModels;
+import io.github.foundationgames.automobility.forge.vendored.jsonem.JsonEM;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,5 +25,12 @@ public class MoreMobilityClient {
                 MoreMobility.id("frontatt_harvester_advanced"),
                 AdvancedHarvesterFrontModel::new
         );
+
+        // register netherite engine models
+        AutomobileModels.register(
+                MoreMobility.id("engine_netherite"),
+                NetheriteEngineModel::new
+        );
+        JsonEM.registerModelLayer(NetheriteEngineModel.MODEL_LAYER);
     }
 }

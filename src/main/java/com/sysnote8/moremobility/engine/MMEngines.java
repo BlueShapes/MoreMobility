@@ -13,8 +13,12 @@ public class MMEngines {
                     1.1f,
                     AutomobilitySounds.DIAMOND_ENGINE::require,
                     new AutomobileEngine.EngineModel(
-                            Automobility.rl("textures/entity/automobile/engine/stone.png"), Automobility.rl("engine_stone"),
-                            new AutomobileEngine.ExhaustPos(0, 7f, -8.3f, 50, 0)
+                            Automobility.rl("textures/entity/automobile/engine/netherite.png"), MoreMobility.id("engine_netherite"),
+                            new AutomobileEngine.ExhaustPos(3, 3.8f, -7.6f, 40, 0),
+                            new AutomobileEngine.ExhaustPos(-3, 3.8f, -7.6f, 40, 0),
+                            new AutomobileEngine.ExhaustPos(-1.5f, 1.0f, -2.8f, 40, 0),
+                            new AutomobileEngine.ExhaustPos(4, 7.075f, -4.95f, 40, 0),
+                            new AutomobileEngine.ExhaustPos(-4, 7.075f, -4.95f, 40, 0)
                     )
             )
     );
