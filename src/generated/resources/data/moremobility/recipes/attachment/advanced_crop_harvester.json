@@ -1,0 +1,33 @@
+{
+  "type": "automobility:auto_mechanic_table",
+  "category": "automobility:attachments",
+  "ingredients": [
+    {
+      "tag": "forge:rods"
+    },
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    {
+      "tag": "forge:storage_blocks/gold"
+    },
+    {
+      "tag": "forge:storage_blocks/copper"
+    },
+    {
+      "tag": "forge:storage_blocks/gold"
+    },
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    {
+      "tag": "forge:rods"
+    }
+  ],
+  "result": {
+    "component": "moremobility:advanced_crop_harvester",
+    "count": 1,
+    "item": "automobility:front_attachment"
+  },
+  "sortnum": 9990001
+}
