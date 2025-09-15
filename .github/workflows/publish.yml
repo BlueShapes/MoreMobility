@@ -49,4 +49,4 @@ jobs:
           loaders: forge
           game-versions: 1.20.1
           files: |
-            build/libs/moremobility-${{ env.TAG_NAME }}
+            build/libs/moremobility-${{ env.TAG_NAME }}.jar
