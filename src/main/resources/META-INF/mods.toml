@@ -61,3 +61,8 @@ mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies."${mod_id}"]]
+modId = "automobility"
+mandatory = true
+versionRange = "0.4.2+1.20.1-forge"
+side = "BOTH"
