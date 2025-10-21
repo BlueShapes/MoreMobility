@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat
 import java.util.Date
+import org.gradle.kotlin.dsl.support.delegates.DependencyHandlerDelegate
 
 buildscript {
     repositories {
@@ -36,6 +37,9 @@ val modName: String by project
 val modLicense: String by project
 val modAuthors: String by project
 val modDescription: String by project
+
+// jei / emi switcher
+val useJei: Boolean = project.findProperty("useJei") == "true"
 
 group = "com.sysnote8"
 version = System.getenv("MOD_VERSION") ?: "0.0.0-indev"
@@ -146,22 +150,49 @@ repositories {
     maven("https://maven.terraformersmc.com/") {
         name = "TerraformersMC"
     }
+
+    maven("https://maven.blamejared.com/") {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+    }
+    maven("https://modmaven.dev") {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+    }
 }
 
 val emiVersion: String = "1.1.22+1.20.1"
 dependencies {
     minecraft(libs.forge)
 
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    compileOnlyDeobf(libs.bundles.jeiApi)
+    compileOnlyDeobf(apiClassifier(libs.emi))
 
-    compileOnly(fg.deobf(variantOf(libs.emi) { classifier("api") }))
-    runtimeOnly(fg.deobf(libs.emi))
+    runtimeOnlyDeobf(
+        if (useJei) {
+            libs.jei
+        } else {
+            libs.emi
+        },
+    )
+
     implementation(fg.deobf(libs.automobility))
 
-    annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
+    annotationProcessor(classified(libs.mixin, "processor"))
 }
+
+fun DependencyHandler.compileOnlyDeobf(provider: Provider<*>): Dependency? = compileOnly(fg.deobf(provider))
+
+fun DependencyHandler.runtimeOnlyDeobf(provider: Provider<*>): Dependency? = runtimeOnly(fg.deobf(provider))
+
+fun DependencyHandlerDelegate.classified(
+    dependencyProvider: Provider<MinimalExternalModuleDependency>,
+    classifier: String,
+) = variantOf(dependencyProvider) {
+    classifier(classifier)
+}
+
+fun DependencyHandlerDelegate.apiClassifier(dependencyProvider: Provider<MinimalExternalModuleDependency>) = classified(dependencyProvider, "api")
 
 tasks {
     processResources {
