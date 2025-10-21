@@ -1,4 +1,4 @@
-package com.sysnote8.moremobility.integration;
+package com.sysnote8.moremobility.integration.emi;
 
 import com.sysnote8.moremobility.mixin.accessor.AutoMechanicTableRecipeAccessor;
 import dev.emi.emi.api.recipe.EmiRecipe;
