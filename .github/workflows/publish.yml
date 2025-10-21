@@ -34,21 +34,10 @@ jobs:
         env:
           MOD_VERSION: ${{ env.TAG_NAME }}
 
-      - name: Publish to Github
+      - name: Publish to Github and Modrinth
         uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # v3.3.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          name: ${{ env.TAG_NAME }}
-          version: ${{ env.TAG_NAME }}
-          version-type: release
-          java: 17
-          loaders: forge
-          game-versions: 1.20.1
-          files: |
-            build/libs/moremobility-${{ env.TAG_NAME }}.jar
-      - name: Publish to Modrinth
-        uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # v3.3.0
-        with:
           modrinth-id: ${{ secrets.MODRINTH_ID }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           name: ${{ env.TAG_NAME }}
