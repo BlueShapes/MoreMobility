@@ -27,15 +27,16 @@ forge = { module = "net.minecraftforge:forge", version.ref = "forge" }
 mixin = { module = "org.spongepowered:mixin", version.ref = "mixin" }
 
 # other mods
-jei = { module = "mezz.jei:jei-1.20.1-forge", version.ref = "jei"}
-jeiCommonApi = { module = "mezz.jei:jei-1.20.1-common-api", version.ref = "jei"}
-jeiForgeApi = { module = "mezz.jei:jei-1.20.1-forge-api", version.ref = "jei"}
+jei = { module = "mezz.jei:jei-1.20.1-forge", version.ref = "jei" }
+jeiCommonApi = { module = "mezz.jei:jei-1.20.1-common-api", version.ref = "jei" }
+jeiForgeApi = { module = "mezz.jei:jei-1.20.1-forge-api", version.ref = "jei" }
 emi = { module = "dev.emi:emi-forge", version.ref = "emi" }
 automobility = { module = "maven.modrinth:automobility", version.ref = "automobility" }
 
 
 [bundles]
 jeiApi = [
+    "jei",
     "jeiCommonApi",
     "jeiForgeApi"
 ]
