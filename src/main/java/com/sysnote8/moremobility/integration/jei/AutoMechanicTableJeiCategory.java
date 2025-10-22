@@ -14,11 +14,8 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class AutoMechanicTableJeiCategory extends AbstractRecipeCategory<AutoMechanicTableRecipe> {
-    private static final Logger logger = LoggerFactory.getLogger(AutoMechanicTableJeiCategory.class);
     private final IGuiHelper guiHelper;
 
     public AutoMechanicTableJeiCategory(IGuiHelper guiHelper) {
@@ -35,11 +32,9 @@ public class AutoMechanicTableJeiCategory extends AbstractRecipeCategory<AutoMec
     @Override
     public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull AutoMechanicTableRecipe recipe, @NotNull IFocusGroup focuses) {
         Ingredient[] ingredients = ((AutoMechanicTableRecipeAccessor) recipe).ingredients().toArray(new Ingredient[0]);
-        logger.info("Recipe id: {}, ingredientSize: {}", recipe.getId(), ingredients.length);
         for (int i = 0; i < ingredients.length; i++) {
             builder.addInputSlot(i * 18, 0).setStandardSlotBackground().addIngredients(ingredients[i]);
         }
-//        recipe.getIngredients().forEach(ingredient -> builder.addInputSlot(0, 0).addIngredients(Ingredient.of(ingredient.getItems())));
         builder.addOutputSlot(getWidth() - 20, 24).setOutputSlotBackground().addItemStack(recipe.getResultItem());
     }
 
