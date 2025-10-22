@@ -4,6 +4,8 @@ import com.sysnote8.moremobility.MoreMobility;
 import io.github.foundationgames.automobility.recipe.AutoMechanicTableRecipe;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -24,7 +26,9 @@ public class MMJEIPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(@NotNull IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(new AutoMechanicTableJeiCategory());
+        IJeiHelpers jeiHelpers = registration.getJeiHelpers();
+        IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
+        registration.addRecipeCategories(new AutoMechanicTableJeiCategory(guiHelper));
     }
 
     @Override
